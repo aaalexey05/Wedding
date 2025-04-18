@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='admin.css') }}">
+    <title>Админ Панель</title>
+
+</head>
+<body>
+    <h2>Админ панель</h2>
+    <a href="{{ url_for('logout') }}">Выйти</a>
+    <h3>Список гостей:</h3>
+    <div>{{ tables|safe }}</div>
+    <div class="total-people">
+        <strong>Общее количество людей: </strong>{{ total_people }}
+    </div>
+</body>
+</html>

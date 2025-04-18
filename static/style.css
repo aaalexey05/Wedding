@@ -1,0 +1,214 @@
+/* Основные стили */
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "Arial", sans-serif;
+  height: 100vh; /* Убедимся, что тело страницы покрывает весь экран */
+  background-image: url("/static/bg.jpg"); /* Указываем путь к изображению */
+  background-size: cover; /* Растягиваем изображение на весь экран */
+  background-position: center; /* Центрируем изображение */
+  background-attachment: fixed; /* Фиксируем изображение при прокрутке */
+}
+
+/* Основной контейнер */
+.container {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 40px 20px; /* Увеличиваем отступы */
+  background-color: rgba(
+    255,
+    255,
+    255,
+    0.8
+  ); /* Белый фон с легкой прозрачностью */
+  border-radius: 10px;
+  position: relative;
+  z-index: 1;
+}
+
+/* Заголовки */
+h1,
+h2,
+h3 {
+  font-size: 36px; /* Увеличиваем размер шрифта */
+  font-weight: 700;
+  font-family: "Georgia", serif;
+  font-weight: lighter; /* Делаем шрифт тоньше */
+  color: #7c171f; /* Красный цвет текста */
+  text-align: center;
+  line-height: 1.5; /* Междустрочный интервал для лучшей читаемости */
+  margin: 30px 0; /* Увеличиваем отступы между заголовками */
+}
+
+/* Дополнительные стили для текста и форм */
+.form-section {
+  margin: 30px 0; /* Увеличиваем отступы между разделами */
+  padding: 20px;
+  background-color: #f5f5f5; /* Светло-серый фон для формы */
+  border-radius: 8px;
+  font-size: 18px;
+}
+
+input[type="text"],
+select {
+  width: 100%;
+  padding: 10px;
+  margin: 12px 0; /* Увеличиваем отступы */
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+button {
+  width: 100%;
+  padding: 12px;
+  background-color: #7c171f; /* Красный цвет кнопки */
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+button:hover {
+  background-color: #1d3d6a; /* Темный красный при наведении */
+}
+
+/* Изображения */
+.image-placeholder img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 8px;
+}
+
+/* Палитра цветов */
+.color-palette {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin: 20px 0;
+}
+
+.color {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+}
+
+/* Контакты */
+footer {
+  text-align: center;
+  margin-top: 40px;
+  font-size: 24px;
+  font-weight: 600;
+  color: #7c171f;
+}
+
+hr {
+  height: 1px;
+  border: 0;
+  margin: 40px 0; /* Увеличиваем отступы */
+}
+
+/* Настройка горизонтальных линий */
+.custom-hr {
+  border: 0;
+  height: 1px;
+  background-color: #e0e0e0;
+  margin: 30px 0; /* Увеличиваем отступы */
+}
+
+/* Стили для разделов */
+.time-location {
+  background-color: #7c171f;
+  border-radius: 10px;
+  padding: 20px;
+  color: white;
+  margin-bottom: 30px;
+}
+
+.time-location h3 {
+  font-size: 36px;
+  color: white;
+  font-family: "Georgia", serif;
+  text-transform: uppercase;
+  text-align: center;
+}
+
+.time-location p {
+  color: white;
+  font-family: "Georgia", serif;
+  font-size: 18px;
+  line-height: 1.6;
+}
+
+/* Стили для раздела Дресс-код */
+.dress-code {
+  margin-bottom: 30px;
+}
+
+.dress-code h3 {
+  font-size: 32px;
+  color: #7c171f;
+  font-family: "Georgia", serif;
+  text-transform: uppercase;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+/* Стили для изображений 4 и 5 */
+.image-row {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  margin-top: 20px;
+}
+
+.image-row img {
+  max-width: 48%; /* Устанавливаем ширину, чтобы картинки располагались рядом */
+  height: auto;
+}
+
+/* Стили для сердечка на телефонах */
+.image-placeholder_bottom img {
+  width: 50%; /* Уменьшаем изображение до 50% от ширины экрана (можно настроить) */
+  height: auto; /* Сохраняем пропорции изображения */
+  border-radius: 8px;
+  display: block; /* Делаем изображение блочным элементом */
+  margin-left: auto; /* Центрируем изображение */
+  margin-right: auto; /* Центрируем изображение */
+}
+
+/* Стили для параграфов */
+p {
+  text-align: justify; /* Выравниваем текст по ширине */
+  font-size: 20px; /* Устанавливаем размер шрифта */
+  color: #696969; /* Красивый серый цвет текста */
+  margin-bottom: 20px; /* Отступ снизу для разделения параграфов */
+}
+
+/* Стили для уведомления */
+.success-message {
+  display: none;
+  padding: 20px;
+  margin: 20px 0;
+  background-color: #28a745; /* Зеленый цвет */
+  color: white;
+  border-radius: 5px;
+  text-align: center;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+/* Стили для ошибки */
+.error-message {
+  display: none;
+  padding: 20px;
+  margin: 20px 0;
+  background-color: #dc3545; /* Красный цвет */
+  color: white;
+  border-radius: 5px;
+  text-align: center;
+  font-size: 18px;
+  font-weight: bold;
+}

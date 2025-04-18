@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Свадебное приглашение</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Основной контейнер с текстом и изображениями -->
+    <div class="container">
+        <!-- Верхняя часть с информацией о свадьбе -->
+        <header>
+            <h1>WEDDING DAY</h1>
+            <h2>16  |  08  |  2025</h2>
+        </header>
+
+        <!-- Информация о свадьбе -->
+        <section class="info-section">
+            <div class="image-placeholder">
+                <img src="{{ url_for('static', filename='wedding_image0.jpg') }}" alt="Свадебное изображение 1" style="width: 100%; height: auto;">
+            </div>
+
+            <div class="text-block">
+                <h3>МАКСИМ & ВИКТОРИЯ</h3>
+                <p>Мы хотим разделить этот важный день нашей жизни с вами, нашими близкими и родными людьми.</p>
+                <hr/>
+            </div>
+
+            <div class="text-block">
+                <h3>ПРИГЛАШАЕМ ВАС НА ТОРЖЕСТВО ЛЮБВИ И СЧАСТЬЯ - НАШУ СВАДЬБУ!</h3>
+            </div>
+            
+            <div class="image-placeholder">
+                <img src="{{ url_for('static', filename='wedding_image1.png') }}" alt="Свадебное изображение 2" style="width: 100%; height: auto;">
+            </div>
+
+            <hr/>
+
+            <div class="time-location">
+                <div class="text-block">
+                    <h3>МЕСТО ПРОВЕДЕНИЯ</h3>
+                </div>
+                <div class="image-placeholder">
+                    <center>
+                        <img src="{{ url_for('static', filename='wedding_image3.jpg') }}" alt="Свадебное изображение 3" width="90%" height="auto">
+                    </center>
+                </div>                
+                <p>г. Барнаул, ул. Загородная, 137, ресторан “Bullygin”</p>
+                <hr class="custom-hr"/>
+                <p>15:30 — Сбор гостей</p>
+                <hr class="custom-hr"/>
+                <p>16:30 — Праздничный банкет</p>
+                <hr class="custom-hr"/>
+            </div>            
+
+            <hr/>
+
+            <div class="dress-code">
+                <h3>ДРЕСС-КОД</h3>
+                <p>Мы хотим создать уникальную атмосферу на нашем торжестве, поэтому просим вас учесть дресс-код при выборе наряда</p>
+                <div class="color-palette">
+                    <div class="color" style="background-color: #1d3d6a;"></div>
+                    <div class="color" style="background-color: #5a7f94;"></div>
+                    <div class="color" style="background-color: #9c6b4a;"></div>
+                    <div class="color" style="background-color: #6f3b1d;"></div>
+                    <div class="color" style="background-color: #d5b29c;"></div>
+                </div>
+                <div class="image-row">
+                    <img src="{{ url_for('static', filename='wedding_image4.jpg') }}" alt="Свадебное изображение 4">
+                    <img src="{{ url_for('static', filename='wedding_image5.jpg') }}" alt="Свадебное изображение 5">
+                </div>
+            </div>
+
+            <hr/>
+
+            <div class="gift-section">
+                <p>Чтобы наши руки были свободны для объятий, будем рады легким подаркам в конвертах</p>
+                <p>Пожалуйста, подтвердите ваше присутствие на нашем празднике до 1 июля</p>
+            </div>
+        </section>
+
+        <!-- Форма для ввода данных (оставляем внизу) -->
+        <section class="form-section">
+            <form id="wedding-form" action="/submit" method="POST">
+                <label for="full_name">Ваше ФИО:</label>
+                <input type="text" id="full_name" name="full_name" required><br>
+
+                <label for="attending_with">Если будете с парой, то укажите его/ее ФИО</label>
+                <select id="attending_with" name="attending_with" onchange="toggleSecondNameField()">
+                    <option value="no">Буду один/одна</option>
+                    <option value="yes">Буду не один/одна</option>
+                </select><br>
+
+                <div id="second_name_field" style="display:none;">
+                    <label for="second_full_name">ФИО с кем идете</label>
+                    <input type="text" id="second_full_name" name="second_full_name"><br>
+                </div>
+
+                <button type="submit" >Отправить</button>
+            </form>
+        </section>
+
+        <footer class="text-block">
+            <h3>ДО ВСТРЕЧИ!</h3>
+        </footer>
+
+        <div class="image-placeholder_bottom">
+            <img src="{{ url_for('static', filename='wedding_image6.png') }}" alt="Свадебное изображение 6">
+        </div>
+    </div>
+
+    <script>
+        function toggleSecondNameField() {
+            var select = document.getElementById("attending_with");
+            var secondNameField = document.getElementById("second_name_field");
+            if (select.value == "yes") {
+                secondNameField.style.display = "block";
+            } else {
+                secondNameField.style.display = "none";
+            }
+        }
+    </script>
+
+</body>
+</html>
